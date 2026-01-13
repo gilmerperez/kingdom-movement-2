@@ -1,0 +1,140 @@
+.nutritionDetailContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Options sections */
+.optionsSection {
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border-radius: 0.25rem;
+  box-shadow: var(--shadow-small);
+  border: 2px solid var(--primary);
+  background-color: var(--header-bg-color);
+}
+
+/* Title */
+.sectionTitle {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Description */
+.sectionDescription {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+/* Options list */
+.optionsList {
+  gap: 0.75rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.optionItem {
+  display: flex;
+  padding: 0.75rem;
+  font-size: 1.25rem;
+  align-items: center;
+  transition: 0.3s ease;
+  border-radius: 0.25rem;
+  justify-content: center;
+  border: 1px solid var(--bg-color);
+  background-color: var(--bg-color);
+}
+
+.optionItem:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-small);
+  border: 1px solid var(--primary);
+}
+
+/* Back button */
+.backButton {
+  font-size: 2.5rem;
+  transition: 0.3s ease;
+  border-radius: 0.25rem;
+  padding: 0.75rem 1.25rem;
+  color: hsl(0, 0%, 100%);
+  box-shadow: var(--shadow-small);
+  text-shadow: var(--shadow-small);
+  background-color: var(--primary);
+  font-family: var(--font-bebas-neue), sans-serif;
+}
+
+.backButton:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-large);
+  text-shadow: var(--shadow-large);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .optionsSection {
+    padding: 1.75rem;
+  }
+
+  .optionsSection:not(:last-child) {
+    margin-bottom: 1.75rem;
+  }
+
+  .sectionTitle {
+    font-size: 2.5rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.5rem;
+  }
+
+  .optionsList {
+    gap: 0.75rem;
+  }
+
+  .optionItem {
+    font-size: 1.2rem;
+  }
+
+  .backButton {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .optionsSection {
+    padding: 1.5rem;
+  }
+
+  .optionsSection:not(:last-child) {
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionDescription {
+    font-size: 1.15rem;
+  }
+
+  .optionsList {
+    gap: 0.5rem;
+  }
+
+  .optionItem {
+    font-size: 1.15rem;
+  }
+
+  .backButton {
+    font-size: 1.5rem;
+  }
+}

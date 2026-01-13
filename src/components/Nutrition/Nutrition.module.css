@@ -46,7 +46,7 @@
   transition: 0.3s ease;
   margin-bottom: 0.75rem;
   padding-bottom: 0.25rem;
-  font-family: "Anton", sans-serif;
+  font-family: var(--font-anton), sans-serif;
   border-bottom: 3px solid var(--primary);
 }
 
@@ -77,7 +77,7 @@
   border: 2px solid var(--primary);
   text-shadow: var(--shadow-small);
   background-color: var(--primary);
-  font-family: "Bebas Neue", sans-serif;
+  font-family: var(--font-bebas-neue), sans-serif;
 }
 
 .ctaButton:hover {

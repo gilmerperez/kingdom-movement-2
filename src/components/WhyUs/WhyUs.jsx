@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "./WhyUs.module.css";
 import { useRef, useEffect } from "react";
 
@@ -78,7 +80,7 @@ function WhyUs() {
         <section className={styles.benefitsGrid}>
           {/* Nutrition & wellness coaching */}
           <div ref={addCardRef} className={styles.benefitCard}>
-            <h3 className={styles.cardTitle}>Nutrition & Wellness Coaching</h3>
+            <h3 className={styles.cardTitle}>Nutrition &amp; Wellness Coaching</h3>
             <p className={styles.cardText}>
               Nutritious meals, nutrition plans and one on one coaching when it comes to a custom made wellness profile
               so we can achieve your personal goals. Our certified nutrition experts work with you to develop
@@ -87,7 +89,7 @@ function WhyUs() {
           </div>
           {/* Intense classes & open gym */}
           <div ref={addCardRef} className={styles.benefitCard}>
-            <h3 className={styles.cardTitle}>Intense Classes & Open Gym</h3>
+            <h3 className={styles.cardTitle}>Intense Classes &amp; Open Gym</h3>
             <p className={styles.cardText}>
               We offer classes throughout the entire day as well as open gym sessions where you can come in and get some
               work done. Our classes are specially made following workouts that elite and professional level athletes
@@ -96,7 +98,7 @@ function WhyUs() {
           </div>
           {/* Special events & community */}
           <div ref={addCardRef} className={styles.benefitCard}>
-            <h3 className={styles.cardTitle}>Special Events & Community</h3>
+            <h3 className={styles.cardTitle}>Special Events &amp; Community</h3>
             <p className={styles.cardText}>
               Access to our special events that we host, this can include anything from a special Saturday workout class
               in a special location, to a weekend getaway in nature, to parties and celebrations for any occasion. Build
@@ -117,7 +119,7 @@ function WhyUs() {
             <h3 className={styles.cardTitle}>Personalized Training Programs</h3>
             <p className={styles.cardText}>
               Our one-on-one personalized training sessions are tailored to your specific fitness needs and goals.
-              Whether you're a beginner or an experienced athlete, our expert trainers will create a custom workout plan
+              Whether you&apos;re a beginner or an experienced athlete, our expert trainers will create a custom workout plan
               to help you achieve optimum results.
             </p>
           </div>

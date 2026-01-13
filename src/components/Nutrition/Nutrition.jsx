@@ -1,5 +1,6 @@
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import styles from "./Nutrition.module.css";
+import Image from "next/image";
 
 function Nutrition() {
   return (
@@ -7,10 +8,12 @@ function Nutrition() {
       <section className={styles.nutritionComponentContainer}>
         {/* Image */}
         <div className={styles.imageContainer}>
-          <img
+          <Image
             src="/images/nutrition.jpeg"
             className={styles.nutritionImage}
             alt="Fresh, healthy ingredients and nutrition preparation"
+            width={600}
+            height={650}
           />
         </div>
 
@@ -36,7 +39,7 @@ function Nutrition() {
             </p>
           </div>
           {/* CTA button */}
-          <Link to="/nutrition" className={styles.ctaButton}>
+          <Link href="/nutrition" className={styles.ctaButton}>
             EXPLORE MENU
           </Link>
         </div>

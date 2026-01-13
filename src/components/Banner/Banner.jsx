@@ -1,11 +1,12 @@
 import styles from "./Banner.module.css";
+import Image from "next/image";
 
 function Banner({ imageSrc, text, secondaryText }) {
   return (
     <>
       <section className={styles.bannerContainer}>
         <div className={styles.bannerImageContainer}>
-          <img src={imageSrc} alt="Banner image" />
+          <Image src={imageSrc} alt="Banner image" fill className={styles.bannerImage} priority />
           <div className={styles.gradientOverlay}></div>
         </div>
         <div className={styles.bannerContent}>

@@ -52,7 +52,7 @@
   border: 2px solid var(--primary);
   text-shadow: var(--shadow-small);
   background-color: var(--primary);
-  font-family: "Bebas Neue", sans-serif;
+  font-family: var(--font-bebas-neue), sans-serif;
 }
 
 .ctaButton:hover {

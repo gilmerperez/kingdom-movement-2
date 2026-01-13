@@ -1,9 +1,15 @@
+"use client";
+
 import styles from "./Header.module.css";
 import { createPortal } from "react-dom";
 import { useState, useEffect } from "react";
-import { NavLink, Link } from "react-router-dom";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 function Header() {
+  const pathname = usePathname();
+
   // * Sticky header logic
   const [isScrollingUp, setIsScrollingUp] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -18,9 +24,6 @@ function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
-
-  // * Custom styles for active page
-  const navLinkClass = ({ isActive }) => (isActive ? styles.activeLink : undefined);
 
   // * Theme switch
   const [theme, setTheme] = useState("dark");
@@ -46,7 +49,7 @@ function Header() {
     setTheme((prev) => (prev === "dark" ? "light" : "dark"));
   };
 
-  // Make media theme switch on phone's user settings
+  // Make media theme switch on phone&apos;s user settings
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const handleChange = (e) => {
@@ -78,29 +81,44 @@ function Header() {
 
   return (
     <>
-      <header className={`${isScrollingUp ? styles.visible : styles.hidden}`}>
+      <header className={`${styles.header} ${isScrollingUp ? styles.visible : styles.hidden}`}>
         <div className={styles.headerContainer}>
           {/* Desktop header */}
           <div className={styles.desktopHeader}>
             {/* Logo */}
-            <NavLink to="/" className={styles.logoContainer}>
-              <img src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"} alt="Kingdom Movement Logo" />
-            </NavLink>
+            <Link href="/" className={styles.logoContainer}>
+              <Image
+                src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"}
+                alt="Kingdom Movement Logo"
+                width={175}
+                height={50}
+                priority
+              />
+            </Link>
             <div className={styles.navContainer}>
               {/* Site navigation */}
               <nav className={styles.navItems}>
-                <NavLink to="/" className={navLinkClass}>
+                <Link href="/" className={pathname === "/" ? styles.activeLink : undefined}>
                   HOME
-                </NavLink>
-                <NavLink to="/nutrition" className={navLinkClass}>
+                </Link>
+                <Link
+                  href="/nutrition"
+                  className={pathname === "/nutrition" ? styles.activeLink : undefined}
+                >
                   NUTRITION
-                </NavLink>
-                <NavLink to="/schedule" className={navLinkClass}>
+                </Link>
+                <Link
+                  href="/schedule"
+                  className={pathname === "/schedule" ? styles.activeLink : undefined}
+                >
                   SCHEDULE
-                </NavLink>
-                <NavLink to="/membership" className={navLinkClass}>
+                </Link>
+                <Link
+                  href="/membership"
+                  className={pathname === "/membership" ? styles.activeLink : undefined}
+                >
                   MEMBERSHIP
-                </NavLink>
+                </Link>
               </nav>
               {/* Seperator */}
               <span className={styles.seperator}>|</span>
@@ -113,7 +131,7 @@ function Header() {
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
-                  to="https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D236922%26LocationId%3D10458"
+                  href="https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D236922%26LocationId%3D10458"
                 >
                   FREE CLASS
                 </Link>
@@ -128,9 +146,15 @@ function Header() {
               <i className="fa-brands fa-whatsapp"></i>
             </button>
             {/* Logo */}
-            <NavLink to="/" className={styles.mobileLogoContainer}>
-              <img src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"} alt="Kingdom Movement Logo" />
-            </NavLink>
+            <Link href="/" className={styles.mobileLogoContainer}>
+              <Image
+                src={theme === "dark" ? "/logo-white.png" : "/logo-black.png"}
+                alt="Kingdom Movement Logo"
+                width={125}
+                height={36}
+                priority
+              />
+            </Link>
             {/* Hamburger button */}
             <button className={styles.hamburger} onClick={handleHamburgerClick}>
               <i className={`fa-solid fa-bars ${isSpinning ? styles.spin : ""}`}></i>
@@ -150,18 +174,34 @@ function Header() {
               </button>
               {/* Sidebar site navigation */}
               <nav className={styles.sidebarNavItems}>
-                <NavLink to="/" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+                <Link
+                  href="/"
+                  className={pathname === "/" ? styles.activeLink : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   HOME
-                </NavLink>
-                <NavLink to="/nutrition" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+                </Link>
+                <Link
+                  href="/nutrition"
+                  className={pathname === "/nutrition" ? styles.activeLink : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   NUTRITION
-                </NavLink>
-                <NavLink to="/schedule" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+                </Link>
+                <Link
+                  href="/schedule"
+                  className={pathname === "/schedule" ? styles.activeLink : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   SCHEDULE
-                </NavLink>
-                <NavLink to="/membership" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+                </Link>
+                <Link
+                  href="/membership"
+                  className={pathname === "/membership" ? styles.activeLink : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   MEMBERSHIP
-                </NavLink>
+                </Link>
                 {/* Seperator */}
                 <hr className={styles.sidebarSeperator} />
                 {/* Free class button */}
@@ -169,7 +209,7 @@ function Header() {
                   <Link
                     target="_blank"
                     rel="noopener noreferrer"
-                    to="https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D236922%26LocationId%3D10458"
+                    href="https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D236922%26LocationId%3D10458"
                   >
                     FREE CLASS
                   </Link>
@@ -183,18 +223,30 @@ function Header() {
                   <p>{theme === "dark" ? "DARK" : "LIGHT"}</p>
                 </button>
                 {/* Sidebar legal pages */}
-                <NavLink to="/contact" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+                <Link
+                  href="/contact"
+                  className={pathname === "/contact" ? styles.activeLink : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   <i className="fa-solid fa-paper-plane"></i>
                   CONTACT
-                </NavLink>
-                <NavLink to="/privacy-policy" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+                </Link>
+                <Link
+                  href="/privacy-policy"
+                  className={pathname === "/privacy-policy" ? styles.activeLink : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   <i className="fa-solid fa-shield-halved"></i>
                   PRIVACY POLICY
-                </NavLink>
-                <NavLink to="/terms-of-service" className={navLinkClass} onClick={() => setMenuOpen(false)}>
+                </Link>
+                <Link
+                  href="/terms-of-service"
+                  className={pathname === "/terms-of-service" ? styles.activeLink : undefined}
+                  onClick={() => setMenuOpen(false)}
+                >
                   <i className="fa-solid fa-asterisk"></i>
                   TERMS OF SERVICE
-                </NavLink>
+                </Link>
               </div>
             </div>
           </div>,

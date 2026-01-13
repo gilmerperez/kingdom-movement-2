@@ -1,4 +1,4 @@
-header {
+.header {
   top: 0;
   width: 100%;
   z-index: 999;
@@ -192,7 +192,7 @@ header {
 
 /* Tablet responsiveness */
 @media (max-width: 768px) {
-  header {
+  .header {
     padding: 1rem 1.75rem;
   }
 
@@ -308,7 +308,7 @@ header {
 
 /* Hide desktop layout and show mobile layout */
 @media (max-width: 550px) {
-  header {
+  .header {
     padding: 1rem 1.5rem;
   }
 

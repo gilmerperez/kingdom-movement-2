@@ -1,11 +1,4 @@
-/* Anton */
-@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
-
-/* Bebas Neue */
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
-/* Roboto Condensed */
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* Fonts are loaded via Next.js font optimization in layout.jsx */
 
 /* Dark theme */
 html[data-theme="dark"] {
@@ -99,7 +92,7 @@ body {
   background-color: var(--bg-color);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Roboto Condensed", Arial, sans-serif;
+  font-family: var(--font-roboto-condensed), Arial, sans-serif;
 }
 
 /* Main */

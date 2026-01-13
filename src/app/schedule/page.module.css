@@ -1,0 +1,238 @@
+.scheduleContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Introduction */
+.scheduleIntroduction {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.scheduleTitle {
+  line-height: 1;
+  font-size: 4rem;
+  font-weight: 400;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  font-family: var(--font-anton), sans-serif;
+  border-bottom: 3px solid var(--primary);
+}
+
+/* Description */
+.scheduleDescription {
+  line-height: 1.35;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+}
+
+/* Schedule */
+.scheduleWrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  box-shadow: var(--shadow-small);
+  border: 3px solid var(--primary);
+}
+
+.dayTabs {
+  display: flex;
+  flex-wrap: wrap;
+  border-bottom: 3px solid var(--primary);
+  background-color: var(--header-bg-color);
+}
+
+.dayTab {
+  flex: 1;
+  padding: 1rem;
+  background: none;
+  font-weight: 500;
+  font-size: 1.75rem;
+  position: relative;
+  transition: 0.3s ease;
+  font-family: var(--font-bebas-neue), sans-serif;
+}
+
+.dayTab:hover:not(.activeTab) {
+  background-color: var(--bg-color);
+}
+
+.activeTab {
+  color: hsl(0, 0%, 100%);
+  text-shadow: var(--shadow-small);
+  background-color: var(--primary);
+}
+
+/* Closed message */
+.closedMessage {
+  padding: 2rem;
+  text-align: center;
+}
+
+.closedMessageTitle {
+  font-size: 3.5rem;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 3px solid var(--primary);
+}
+
+.closedMessageText {
+  line-height: 1.35;
+  font-size: 1.5rem;
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+}
+
+/* Schedule table */
+.scheduleTable {
+  width: 100%;
+}
+
+/* Header */
+.tableHeader {
+  display: grid;
+  font-size: 1.5rem;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--header-bg-color);
+}
+
+.activityHeader,
+.timeHeader {
+  padding: 1rem;
+  font-weight: 400;
+  font-size: 1.75rem;
+  font-family: var(--font-bebas-neue), sans-serif;
+}
+
+/* Content */
+.tableRow {
+  display: grid;
+  transition: 0.3s ease;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--bg-color);
+  border-bottom: 3px solid var(--bg-color);
+}
+
+.tableRow:not(:last-child):hover {
+  border-bottom: 3px solid var(--primary);
+}
+
+.tableRow:nth-child(even) {
+  background-color: var(--header-bg-color);
+}
+
+.activityCell,
+.timeCell {
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.activityType,
+.timeText {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .scheduleTitle {
+    font-size: 3.25rem;
+  }
+
+  .scheduleDescription {
+    font-size: 1.15rem;
+  }
+
+  .dayTab {
+    font-size: 1.5rem;
+  }
+
+  .closedMessageTitle {
+    font-size: 2.5rem;
+  }
+
+  .closedMessageText {
+    font-size: 1.15rem;
+  }
+
+  .tableHeader {
+    font-size: 1.25rem;
+  }
+
+  .activityHeader,
+  .timeHeader {
+    font-size: 1.5rem;
+  }
+
+  .activityType,
+  .timeText {
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .scheduleTitle {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .scheduleDescription {
+    font-size: 1rem;
+  }
+
+  .scheduleWrapper {
+    border: 2px solid var(--primary);
+  }
+
+  .dayTabs {
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .dayTab {
+    padding: 0.75rem;
+    font-size: 1.25rem;
+  }
+
+  .closedMessageTitle {
+    font-size: 2rem;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .closedMessageText {
+    font-size: 1rem;
+  }
+
+  .tableHeader {
+    font-size: 1.15rem;
+  }
+
+  .tableRow {
+    border-bottom: 2px solid var(--bg-color);
+  }
+
+  .tableRow:hover {
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .activityHeader,
+  .timeHeader {
+    font-size: 1.25rem;
+  }
+
+  .activityType,
+  .timeText {
+    font-size: 1rem;
+  }
+}

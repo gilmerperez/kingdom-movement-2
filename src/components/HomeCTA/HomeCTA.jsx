@@ -1,6 +1,9 @@
-import { Link } from "react-router-dom";
+"use client";
+
+import Link from "next/link";
 import styles from "./HomeCTA.module.css";
 import { useRef, useState, useEffect } from "react";
+import Image from "next/image";
 
 const HomeCTA = () => {
   // * State for component visibility
@@ -39,15 +42,15 @@ const HomeCTA = () => {
       <section ref={componentRef} className={styles.homeCTAContainer}>
         {/* Logo */}
         <div className={`${styles.logoContainer} ${isVisible ? styles.fadeInElement : ""}`}>
-          <img src="/logo-white.png" alt="Kingdom Movement Logo" />
+          <Image src="/logo-white.png" alt="Kingdom Movement Logo" width={250} height={72} />
         </div>
         {/* Text */}
         <p className={`${styles.text} ${isVisible ? styles.fadeInElement : ""}`}>
-          Nutrition is power. Whether you're chasing gains, energy, or recovery, our team will help you create a
+          Nutrition is power. Whether you&apos;re chasing gains, energy, or recovery, our team will help you create a
           personalized plan that fuels every workout and drives real, lasting results.
         </p>
         <p className={`${styles.text} ${isVisible ? styles.fadeInElement : ""}`}>
-          No matter your schedule — early mornings, mid-day breaks, or late-night grinds, we've got classes to match
+          No matter your schedule — early mornings, mid-day breaks, or late-night grinds, we&apos;ve got classes to match
           your pace. Get in, get after it, and get results on your time.
         </p>
         <p className={`${styles.text} ${isVisible ? styles.fadeInElement : ""}`}>
@@ -55,10 +58,10 @@ const HomeCTA = () => {
           support, perks, and access. Growth here compounds.
         </p>
         <p className={`${styles.text} ${isVisible ? styles.fadeInElement : ""}`}>
-          You're not just joining a gym. You're joining a team that refuses to quit on you. Ready to move with purpose?
+          You&apos;re not just joining a gym. You&apos;re joining a team that refuses to quit on you. Ready to move with purpose?
         </p>
         {/* CTA button */}
-        <Link to="/membership" className={`${styles.ctaButton} ${isVisible ? styles.fadeInElement : ""}`}>
+        <Link href="/membership" className={`${styles.ctaButton} ${isVisible ? styles.fadeInElement : ""}`}>
           VIEW MEMBERSHIPS
         </Link>
       </section>

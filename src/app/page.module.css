@@ -1,0 +1,21 @@
+.homeContainer {
+  gap: 3rem;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .homeContainer {
+    gap: 2rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+}

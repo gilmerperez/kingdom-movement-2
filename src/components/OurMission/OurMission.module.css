@@ -39,7 +39,7 @@
   font-weight: 400;
   font-style: italic;
   transition: 0.3s ease;
-  font-family: "Anton", sans-serif;
+  font-family: var(--font-anton), sans-serif;
   animation: slideInFromRight 0.8s ease-out 0.3s forwards;
 }
 

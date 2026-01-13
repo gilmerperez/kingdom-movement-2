@@ -1,0 +1,104 @@
+.termsOfServiceContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  min-height: 65vh;
+  max-width: 1000px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Introduction */
+.termsOfServiceIntroduction {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.termsOfServiceTitle {
+  line-height: 1;
+  font-size: 4rem;
+  font-weight: 400;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  font-family: var(--font-anton), sans-serif;
+  border-bottom: 3px solid var(--primary);
+}
+
+/* Description */
+.termsOfServiceDescription {
+  line-height: 1.35;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+}
+
+/* Terms of service */
+.terms {
+  text-align: left;
+}
+
+/* Terms heading */
+.termsHeading {
+  line-height: 1;
+  font-weight: 400;
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-bottom: 0.15rem;
+  padding-bottom: 0.05rem;
+  font-family: var(--font-bebas-neue), sans-serif;
+  border-bottom: 2px solid var(--primary);
+}
+
+/* Terms text */
+.termsText {
+  line-height: 1.35;
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+.termsText:not(:last-child) {
+  margin-bottom: 1rem;
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .termsOfServiceTitle {
+    font-size: 3.25rem;
+  }
+
+  .termsOfServiceDescription {
+    font-size: 1.15rem;
+  }
+
+  .termsHeading {
+    font-size: 1.25rem;
+  }
+
+  .termsText {
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .termsOfServiceTitle {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .termsOfServiceDescription {
+    font-size: 1rem;
+  }
+
+  .termsHeading {
+    font-size: 1.15rem;
+  }
+
+  .termsText {
+    font-size: 1rem;
+  }
+}
