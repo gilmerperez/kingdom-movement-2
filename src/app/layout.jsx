@@ -44,6 +44,11 @@ export const metadata = {
     "Kingdom Movement",
   ],
   authors: [{ name: "Kingdom Movement" }],
+  icons: {
+    icon: "/favicon.jpg",
+    shortcut: "/favicon.jpg",
+    apple: "/favicon.jpg",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
