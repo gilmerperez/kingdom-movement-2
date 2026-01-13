@@ -10,7 +10,7 @@ Kingdom Movement is a modern, high-performance CrossFit and fitness training web
 
 - **Methodology:** Built using Next.js App Router architecture with component-based design. The application leverages server-side rendering and static generation for optimal performance and SEO. Client-side interactivity is handled through React hooks and state management for dynamic features like category filtering, schedule navigation, and theme switching.
 
-**Live Demo:** [Link to Deployed Application]([Link])
+**Live Demo:** [Link to Deployed Application](https://kingdom-movement.vercel.app/)
 
 ## Table of Contents
 

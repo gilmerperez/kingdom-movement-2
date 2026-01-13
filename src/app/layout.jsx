@@ -47,7 +47,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://kingdommovement.com",
+    url: "https://kingdom-movement.vercel.app/",
     siteName: "Kingdom Movement",
     title: "Kingdom Movement | CrossFit & Fitness Training",
     description:
