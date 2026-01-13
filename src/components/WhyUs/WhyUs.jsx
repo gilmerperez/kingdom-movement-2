@@ -1,5 +1,4 @@
 "use client";
-
 import styles from "./WhyUs.module.css";
 import { useRef, useEffect } from "react";
 
@@ -119,8 +118,8 @@ function WhyUs() {
             <h3 className={styles.cardTitle}>Personalized Training Programs</h3>
             <p className={styles.cardText}>
               Our one-on-one personalized training sessions are tailored to your specific fitness needs and goals.
-              Whether you&apos;re a beginner or an experienced athlete, our expert trainers will create a custom workout plan
-              to help you achieve optimum results.
+              Whether you&apos;re a beginner or an experienced athlete, our expert trainers will create a custom workout
+              plan to help you achieve optimum results.
             </p>
           </div>
         </section>

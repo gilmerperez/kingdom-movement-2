@@ -1,11 +1,10 @@
 "use client";
-
-import styles from "./page.module.css";
+import Image from "next/image";
 import { useState } from "react";
+import styles from "./page.module.css";
 import { useRouter } from "next/navigation";
 import Banner from "../../components/Banner/Banner";
 import nutritionData from "../../data/nutrition.json";
-import Image from "next/image";
 
 export default function Nutrition() {
   const router = useRouter();

@@ -1,6 +1,6 @@
 import Link from "next/link";
-import styles from "./Nutrition.module.css";
 import Image from "next/image";
+import styles from "./Nutrition.module.css";
 
 function Nutrition() {
   return (

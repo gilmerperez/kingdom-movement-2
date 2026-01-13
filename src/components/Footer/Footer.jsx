@@ -1,12 +1,9 @@
 "use client";
-
-import styles from "./Footer.module.css";
 import Link from "next/link";
+import styles from "./Footer.module.css";
 import { usePathname } from "next/navigation";
 
 function Footer() {
-  const pathname = usePathname();
-
   return (
     <>
       <footer className={styles.footer}>

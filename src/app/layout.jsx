@@ -1,7 +1,8 @@
 import "../styles/globals.css";
-import { Anton, Bebas_Neue, Roboto_Condensed } from "next/font/google";
 import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
+import { Analytics } from "@vercel/analytics/next";
+import { Anton, Bebas_Neue, Roboto_Condensed } from "next/font/google";
 
 const anton = Anton({
   weight: "400",
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
           <Header />
           {children}
           <Footer />
+          <Analytics />
         </body>
       </html>
     </>

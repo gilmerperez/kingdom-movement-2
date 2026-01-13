@@ -1,9 +1,8 @@
 "use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./HomeCTA.module.css";
 import { useRef, useState, useEffect } from "react";
-import Image from "next/image";
 
 const HomeCTA = () => {
   // * State for component visibility
@@ -26,13 +25,14 @@ const HomeCTA = () => {
       }
     );
 
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
+    const currentRef = componentRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
 
     return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -50,15 +50,16 @@ const HomeCTA = () => {
           personalized plan that fuels every workout and drives real, lasting results.
         </p>
         <p className={`${styles.text} ${isVisible ? styles.fadeInElement : ""}`}>
-          No matter your schedule — early mornings, mid-day breaks, or late-night grinds, we&apos;ve got classes to match
-          your pace. Get in, get after it, and get results on your time.
+          No matter your schedule — early mornings, mid-day breaks, or late-night grinds, we&apos;ve got classes to
+          match your pace. Get in, get after it, and get results on your time.
         </p>
         <p className={`${styles.text} ${isVisible ? styles.fadeInElement : ""}`}>
           We offer multiple membership levels to match your commitment and lifestyle. Each one unlocking new levels of
           support, perks, and access. Growth here compounds.
         </p>
         <p className={`${styles.text} ${isVisible ? styles.fadeInElement : ""}`}>
-          You&apos;re not just joining a gym. You&apos;re joining a team that refuses to quit on you. Ready to move with purpose?
+          You&apos;re not just joining a gym. You&apos;re joining a team that refuses to quit on you. Ready to move with
+          purpose?
         </p>
         {/* CTA button */}
         <Link href="/membership" className={`${styles.ctaButton} ${isVisible ? styles.fadeInElement : ""}`}>

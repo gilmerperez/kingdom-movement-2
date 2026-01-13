@@ -1,13 +1,12 @@
 "use client";
-
 import styles from "./page.module.css";
 import Banner from "../../components/Banner/Banner";
 import { useEffect, useState, useRef } from "react";
 import membershipData from "../../data/membership.json";
 
 export default function Membership() {
-  // * State for managing memberships
-  const [memberships, setMemberships] = useState([]);
+  // * State for managing memberships - initialize directly from static data
+  const [memberships] = useState(membershipData.memberships);
 
   // * Membership order
   const reorderMemberships = (memberships) => {
@@ -20,10 +19,6 @@ export default function Membership() {
     const freeclass = memberships.find((m) => m.id === "freeclass");
     return [diamond, gold, silver, bronze, hyrox, dropin, freeclass].filter(Boolean);
   };
-
-  useEffect(() => {
-    setMemberships(membershipData.memberships);
-  }, []);
 
   // * Ref for additional info section
   const additionalInfoRef = useRef(null);
@@ -45,13 +40,14 @@ export default function Membership() {
       }
     );
     // Observe additional info section
-    if (additionalInfoRef.current) {
-      observer.observe(additionalInfoRef.current);
+    const currentRef = additionalInfoRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
     // Clean up observer
     return () => {
-      if (additionalInfoRef.current) {
-        observer.unobserve(additionalInfoRef.current);
+      if (currentRef) {
+        observer.unobserve(currentRef);
       }
     };
   }, []);
@@ -74,8 +70,8 @@ export default function Membership() {
             {/* Description */}
             <p className={styles.membershipDescription}>
               Choose the plan that fits your fitness journey. Each membership tier is designed to support your goals,
-              whether you&apos;re just starting out or ready to push your limits. Join our community and transform your life
-              through movement.
+              whether you&apos;re just starting out or ready to push your limits. Join our community and transform your
+              life through movement.
             </p>
           </section>
 

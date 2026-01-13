@@ -1,10 +1,9 @@
 "use client";
-
 import Link from "next/link";
+import Image from "next/image";
 import styles from "./Coaches.module.css";
 import coachesData from "../../data/coaches.json";
-import { useRef, useEffect, useState } from "react";
-import Image from "next/image";
+import { useRef, useEffect, useState, useCallback } from "react";
 
 const Coaches = () => {
   // * Scroll animation refs
@@ -46,17 +45,8 @@ const Coaches = () => {
   const [currentCoachIndex, setCurrentCoachIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // * Auto-rotate carousel every 5 seconds
-  useEffect(() => {
-    const interval = setInterval(() => {
-      handleCoachChange((prevIndex) => (prevIndex === coachesData.length - 1 ? 0 : prevIndex + 1));
-    }, 5000);
-    return () => clearInterval(interval);
-    // Reset timer when user manually changes coach
-  }, [currentCoachIndex]);
-
   // * Handle coach change with transition effect
-  const handleCoachChange = (newIndexOrFunction) => {
+  const handleCoachChange = useCallback((newIndexOrFunction) => {
     setIsTransitioning(true);
     setTimeout(() => {
       setCurrentCoachIndex(newIndexOrFunction);
@@ -64,7 +54,16 @@ const Coaches = () => {
         setIsTransitioning(false);
       }, 100);
     }, 300);
-  };
+  }, []);
+
+  // * Auto-rotate carousel every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleCoachChange((prevIndex) => (prevIndex === coachesData.length - 1 ? 0 : prevIndex + 1));
+    }, 5000);
+    return () => clearInterval(interval);
+    // Reset timer when user manually changes coach
+  }, [currentCoachIndex, handleCoachChange]);
 
   // * Carousel dots
   const handleDotClick = (index) => {
@@ -93,12 +92,12 @@ const Coaches = () => {
             </h2>
             {/* Description */}
             <p className={styles.coachesDescription}>
-              Our coaches are more than trainers — they&apos;re champions who&apos;ve walked the path and know what it takes to
-              transform lives. Each brings battle-tested experience from the highest levels of competition, combined
-              with the heart of a mentor who refuses to let you settle for anything less than your absolute best.
-              Whether you&apos;re taking your first step or chasing championship glory, they&apos;ll push you beyond your limits
-              while building the mental toughness that separates champions from the rest. This isn&apos;t just coaching. This
-              is movement leadership.
+              Our coaches are more than trainers — they&apos;re champions who&apos;ve walked the path and know what it
+              takes to transform lives. Each brings battle-tested experience from the highest levels of competition,
+              combined with the heart of a mentor who refuses to let you settle for anything less than your absolute
+              best. Whether you&apos;re taking your first step or chasing championship glory, they&apos;ll push you
+              beyond your limits while building the mental toughness that separates champions from the rest. This
+              isn&apos;t just coaching. This is movement leadership.
             </p>
             {/* CTA button */}
             <Link href="/schedule" className={styles.scheduleButton}>

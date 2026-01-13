@@ -1,7 +1,6 @@
 "use client";
-
-import styles from "./page.module.css";
 import { useState } from "react";
+import styles from "./page.module.css";
 import Banner from "../../components/Banner/Banner";
 import scheduleData from "../../data/schedule.json";
 

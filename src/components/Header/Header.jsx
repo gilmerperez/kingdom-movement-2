@@ -1,11 +1,10 @@
 "use client";
-
+import Link from "next/link";
+import Image from "next/image";
 import styles from "./Header.module.css";
 import { createPortal } from "react-dom";
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
 
 function Header() {
   const pathname = usePathname();
@@ -25,20 +24,18 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // * Theme switch
-  const [theme, setTheme] = useState("dark");
+  // * Theme switch - use lazy initializer to avoid synchronous setState in effect
+  const [theme, setTheme] = useState(() => {
+    if (typeof window !== "undefined") {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme) return storedTheme;
+      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      return prefersDark ? "dark" : "light";
+    }
+    return "dark";
+  });
 
-  // Make theme be set in DOM
-  useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-    const initialTheme = storedTheme || (prefersDark ? "dark" : "light");
-    setTheme(initialTheme);
-    document.documentElement.setAttribute("data-theme", initialTheme);
-  }, []);
-
-  // Save theme to localStorage
+  // Save theme to localStorage and update DOM
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
     localStorage.setItem("theme", theme);
@@ -101,22 +98,13 @@ function Header() {
                 <Link href="/" className={pathname === "/" ? styles.activeLink : undefined}>
                   HOME
                 </Link>
-                <Link
-                  href="/nutrition"
-                  className={pathname === "/nutrition" ? styles.activeLink : undefined}
-                >
+                <Link href="/nutrition" className={pathname === "/nutrition" ? styles.activeLink : undefined}>
                   NUTRITION
                 </Link>
-                <Link
-                  href="/schedule"
-                  className={pathname === "/schedule" ? styles.activeLink : undefined}
-                >
+                <Link href="/schedule" className={pathname === "/schedule" ? styles.activeLink : undefined}>
                   SCHEDULE
                 </Link>
-                <Link
-                  href="/membership"
-                  className={pathname === "/membership" ? styles.activeLink : undefined}
-                >
+                <Link href="/membership" className={pathname === "/membership" ? styles.activeLink : undefined}>
                   MEMBERSHIP
                 </Link>
               </nav>

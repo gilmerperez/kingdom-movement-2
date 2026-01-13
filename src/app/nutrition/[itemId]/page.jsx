@@ -1,34 +1,27 @@
 "use client";
-
-import { useState, useEffect } from "react";
 import styles from "./page.module.css";
+import { useState, useEffect } from "react";
+import { useRouter, useParams } from "next/navigation";
 import Banner from "../../../components/Banner/Banner";
 import nutritionData from "../../../data/nutrition.json";
-import { useRouter, useParams } from "next/navigation";
-import Image from "next/image";
 
 export default function NutritionDetail() {
   const router = useRouter();
   const params = useParams();
   const { itemId } = params;
-  const [menuItem, setMenuItem] = useState(null);
-  const [notFound, setNotFound] = useState(false);
 
-  // * Find the menu item by ID
-  const item = nutritionData.menuItems.find((item) => item.id === itemId);
+  // * Find the menu item by ID - compute directly from static data
+  const menuItem = nutritionData.menuItems.find((item) => item.id === itemId);
 
-  // * Set menu item
+  // * Redirect if item not found
   useEffect(() => {
-    if (item) {
-      setMenuItem(item);
-    } else {
-      setNotFound(true);
+    if (!menuItem) {
       router.push("/");
     }
-  }, [item, itemId, router]);
+  }, [menuItem, router]);
 
   // If no menu item is found, show a loading message
-  if (!menuItem || notFound) {
+  if (!menuItem) {
     return <div>Loading...</div>;
   }
 
