@@ -1,0 +1,117 @@
+{
+  "memberships": [
+    {
+      "id": "diamond",
+      "name": "DIAMOND",
+      "price": 200,
+      "description": "Our premium membership for serious athletes who want it all",
+      "features": [
+        "Saturday Classes",
+        "All Day Open Box",
+        "Unlimited Classes",
+        "Special Events Benefits",
+        "4 Guest Passes Per Month",
+        "1 Wellness Profile Per Month"
+      ],
+      "isPopular": true,
+      "ctaText": "BECOME DIAMOND",
+      "signupLink": "https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=ReviewPurchase%7COnlineMembershipId%3D252558%26LocationId%3D10458%26OnlineMembershipPaymentOptionId%3D1318554"
+    },
+    {
+      "id": "gold",
+      "name": "GOLD",
+      "price": 150,
+      "description": "For dedicated athletes who want unlimited access",
+      "features": [
+        "Saturday Classes",
+        "Unlimited Classes",
+        "Special Events Benefits",
+        "3 Guest Passes Per Month",
+        "1 Wellness Profile Per Month"
+      ],
+      "isPopular": false,
+      "ctaText": "JOIN GOLD",
+      "signupLink": "https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=ReviewPurchase%7COnlineMembershipId%3D295309%26LocationId%3D10458%26OnlineMembershipPaymentOptionId%3D1318583"
+    },
+    {
+      "id": "silver",
+      "name": "SILVER",
+      "price": 135,
+      "description": "Perfect for consistent training with great benefits",
+      "features": [
+        "Saturday Classes",
+        "3 Classes Per Week",
+        "Special Events Benefits",
+        "2 Guest Passes Per Month",
+        "1 Wellness Profile Per Month"
+      ],
+      "isPopular": false,
+      "ctaText": "CHOOSE SILVER",
+      "signupLink": "https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=ReviewPurchase%7COnlineMembershipId%3D295212%26LocationId%3D10458%26OnlineMembershipPaymentOptionId%3D1318599"
+    },
+    {
+      "id": "bronze",
+      "name": "BRONZE",
+      "price": 115,
+      "description": "Great starting point for your fitness journey",
+      "features": [
+        "Saturday Classes",
+        "2 Classes Per Week",
+        "Special Events Benefits",
+        "1 Guest Pass Per Month",
+        "1 Wellness Profile Per Month"
+      ],
+      "isPopular": false,
+      "ctaText": "START BRONZE",
+      "signupLink": "https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=ReviewPurchase%7COnlineMembershipId%3D296677%26LocationId%3D10458%26OnlineMembershipPaymentOptionId%3D1318643"
+    },
+    {
+      "id": "hyrox",
+      "name": "HYROX",
+      "price": 100,
+      "description": "Specialized program for Hyrox competition training",
+      "features": [
+        "3 Classes Per Week",
+        "Special Events Benefits",
+        "4 Guest Passes Per Month",
+        "1 Wellness Profile Per Month"
+      ],
+      "isPopular": false,
+      "ctaText": "JOIN HYROX",
+      "signupLink": "https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=ReviewPurchase%7COnlineMembershipId%3D296678%26LocationId%3D10458%26OnlineMembershipPaymentOptionId%3D1318648"
+    },
+    {
+      "id": "dropin",
+      "name": "DROP-IN",
+      "price": 20,
+      "priceUnit": "class",
+      "description": "Perfect for visitors or those wanting to try a class without commitment. One-time purchase for any single class.",
+      "customFeaturesTitle": "WHAT'S INCLUDED?",
+      "features": [
+        "No Commitment Required",
+        "Meet Our Certified Coaches",
+        "Full Equipment & Gear Access",
+        "Preview Our Scheduling System"
+      ],
+      "isPopular": false,
+      "ctaText": "BUY DROP-IN",
+      "signupLink": "https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D236921%26LocationId%3D10458"
+    },
+    {
+      "id": "freeclass",
+      "name": "FREE CLASS",
+      "price": null,
+      "description": "Try our classes risk-free and experience the Kingdom Movement experience",
+      "customFeaturesTitle": "WHAT'S INCLUDED?",
+      "features": [
+        "No Commitment Required",
+        "Meet Our Certified Coaches",
+        "Full Equipment & Gear Access",
+        "Preview Our Scheduling System"
+      ],
+      "isPopular": false,
+      "ctaText": "JOIN THE TEAM",
+      "signupLink": "https://kngdmmvmnt.wodify.com/OnlineSalesPage/Main?q=Classes%7COnlineMembershipId%3D236922%26LocationId%3D10458"
+    }
+  ]
+}

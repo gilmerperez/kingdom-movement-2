@@ -1,0 +1,155 @@
+.whyUsContainer {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Introduction */
+.whyUsIntroduction {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Title */
+.whyUsTitle {
+  opacity: 0;
+  line-height: 1;
+  font-size: 4rem;
+  font-weight: 400;
+  filter: blur(10px);
+  display: inline-block;
+  transition: 0.5s ease;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  transform: translateY(30px);
+  font-family: "Anton", sans-serif;
+  border-bottom: 3px solid var(--primary);
+}
+
+/* Description */
+.whyUsDescription {
+  opacity: 0;
+  max-width: 800px;
+  line-height: 1.35;
+  filter: blur(10px);
+  font-size: 1.25rem;
+  transition: 0.5s ease;
+  transform: translateY(30px);
+  color: var(--text-secondary);
+}
+
+/* Benefits grid */
+.benefitsGrid {
+  gap: 1rem;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Benefit cards */
+.benefitCard {
+  flex: 1;
+  opacity: 0;
+  padding: 1rem;
+  min-width: 500px;
+  max-width: 400px;
+  text-align: center;
+  transition: 0.5s ease;
+  border-radius: 0.25rem;
+  transform: translateX(-100px);
+  box-shadow: var(--shadow-small);
+  border: 2px solid var(--primary);
+  background: linear-gradient(to top, var(--header-bg-color), var(--bg-color));
+}
+
+/* Dark mode hover */
+html[data-theme="dark"] .benefitCard:hover {
+  background: linear-gradient(to top, var(--primary), var(--header-bg-color));
+}
+
+/* Card title */
+.cardTitle {
+  font-size: 2rem;
+  font-weight: 400;
+  transition: 0.3s ease;
+  font-family: "Bebas Neue", sans-serif;
+}
+
+/* Card text */
+.cardText {
+  line-height: 1.35;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+}
+
+/* Animations */
+.whyUsTitle.animateTitle {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.whyUsDescription.animateDescription {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.benefitCard:nth-child(even) {
+  transform: translateX(100px);
+}
+
+.benefitCard.animateCard {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .whyUsTitle {
+    font-size: 3.25rem;
+  }
+
+  .whyUsDescription {
+    font-size: 1.15rem;
+  }
+
+  .cardTitle {
+    font-size: 1.75rem;
+  }
+
+  .cardText {
+    font-size: 1.15rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .whyUsTitle {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .whyUsDescription {
+    font-size: 1rem;
+  }
+
+  .benefitCard {
+    min-width: 100%;
+  }
+
+  .cardTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardText {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,136 @@
+.nutritionComponentContainer {
+  gap: 3rem;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  max-width: 1200px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Image */
+.imageContainer {
+  flex: 1;
+  display: flex;
+  max-height: 650px;
+}
+
+.nutritionImage {
+  width: 100%;
+  object-fit: cover;
+  transition: 0.3s ease;
+  border-radius: 0.25rem;
+  box-shadow: var(--shadow-small);
+}
+
+.nutritionImage:hover {
+  transform: scale(1.05);
+  box-shadow: var(--shadow-large);
+}
+
+/* Content */
+.contentContainer {
+  flex: 1;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nutritionComponentTitle {
+  line-height: 1;
+  font-size: 4rem;
+  font-weight: 400;
+  display: inline-block;
+  transition: 0.3s ease;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  font-family: "Anton", sans-serif;
+  border-bottom: 3px solid var(--primary);
+}
+
+.nutritionComponentDescription {
+  gap: 1rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nutritionComponentDescription p {
+  line-height: 1.35;
+  font-size: 1.25rem;
+  transition: 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.ctaButton {
+  font-weight: 400;
+  font-size: 2.25rem;
+  padding: 0.75rem 1rem;
+  transition: 0.3s ease;
+  border-radius: 0.25rem;
+  color: hsl(0, 0%, 100%);
+  box-shadow: var(--shadow-small);
+  border: 2px solid var(--primary);
+  text-shadow: var(--shadow-small);
+  background-color: var(--primary);
+  font-family: "Bebas Neue", sans-serif;
+}
+
+.ctaButton:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-large);
+  text-shadow: var(--shadow-large);
+}
+
+/* Tablet responsiveness */
+@media (max-width: 768px) {
+  .nutritionComponentContainer {
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    min-width: 100%;
+    max-height: 350px;
+  }
+
+  .nutritionComponentTitle {
+    font-size: 3.25rem;
+  }
+
+  .nutritionComponentDescription p {
+    font-size: 1.15rem;
+  }
+
+  .ctaButton {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+  .nutritionComponentContainer {
+    gap: 1rem;
+  }
+
+  .imageContainer {
+    max-height: 300px;
+  }
+
+  .nutritionComponentTitle {
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--primary);
+  }
+
+  .nutritionComponentDescription p {
+    font-size: 1rem;
+  }
+
+  .ctaButton {
+    font-size: 1.75rem;
+  }
+}

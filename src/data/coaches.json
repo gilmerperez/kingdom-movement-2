@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "name": "DAVID ZORRILLA",
+    "image": "/coaches/david.jpg",
+    "description": "David brings 8 years of competitive powerlifting experience and specializes in Olympic weightlifting techniques. As a certified CrossFit Level 3 trainer, he focuses on perfecting movement patterns and building raw strength. His methodical approach helps athletes break through plateaus and achieve personal records."
+  },
+  {
+    "id": 2,
+    "name": "GABRIEL AMARO",
+    "image": "/coaches/gabriel.jpg",
+    "description": "Gabriel is a former collegiate track athlete turned functional fitness expert. With a degree in Exercise Science and certifications in mobility and recovery, he excels at injury prevention and rehabilitation. His holistic approach combines movement quality with mental resilience training."
+  },
+  {
+    "id": 3,
+    "name": "MIGUELANGEL CASTILLO",
+    "image": "/coaches/miguel.jpg",
+    "description": "Miguelangel is a former professional soccer player who transitioned into high-intensity interval training. His dynamic coaching style emphasizes cardiovascular endurance and agility. Known for his motivational energy, he pushes athletes to discover their untapped potential through challenging but achievable workouts."
+  },
+  {
+    "id": 4,
+    "name": "HORACIO ARCAS",
+    "image": "/coaches/horacio.jpg",
+    "description": "Horacio is a certified nutritionist and body composition specialist with over 10 years of experience in sports performance. His expertise lies in metabolic conditioning and helping clients achieve sustainable lifestyle changes. He believes in the power of consistency over intensity and creates personalized programs for long-term success."
+  },
+  {
+    "id": 5,
+    "name": "FERMIN ORTIZ",
+    "image": "/coaches/fermin.jpg",
+    "description": "Fermin is a former competitive gymnast and certified movement specialist who focuses on bodyweight training and flexibility. His unique approach combines calisthenics with yoga principles to build functional strength and mobility. He's passionate about helping beginners develop proper movement foundations and advanced athletes master complex skills."
+  },
+  {
+    "id": 6,
+    "name": "GLORIA CAAMAÑO",
+    "image": "/coaches/gloria.jpg",
+    "description": "Gloria is a former competitive swimmer and certified personal trainer specializing in women's fitness and postnatal recovery. Her empathetic coaching style creates a supportive environment for all fitness levels. She combines strength training with mindfulness practices to help clients build both physical and mental resilience."
+  }
+]
