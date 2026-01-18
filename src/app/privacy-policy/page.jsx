@@ -1,10 +1,21 @@
 import styles from "./page.module.css";
 
+const BASE_URL = "https://kingdom-movement.vercel.app";
+
 export const metadata = {
   title: "Privacy Policy",
   description:
     "Kingdom Movement Privacy Policy. Learn how we handle your information and protect your privacy when visiting our website.",
   keywords: ["privacy policy", "data protection", "Kingdom Movement privacy"],
+  alternates: {
+    canonical: "/privacy-policy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Kingdom Movement",
+    description:
+      "Kingdom Movement Privacy Policy. Learn how we handle your information and protect your privacy when visiting our website.",
+    url: `${BASE_URL}/privacy-policy`,
+  },
 };
 
 export default function PrivacyPolicy() {

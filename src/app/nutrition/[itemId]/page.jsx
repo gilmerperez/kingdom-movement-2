@@ -25,8 +25,58 @@ export default function NutritionDetail() {
     return <div>Loading...</div>;
   }
 
+  const BASE_URL = "https://kingdom-movement.vercel.app";
+
+  // Structured Data for Product/Menu Item
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "MenuItem",
+    name: menuItem.name,
+    description: menuItem.description,
+    image: `${BASE_URL}${menuItem.imagePath}`,
+    category: menuItem.category,
+    offers: {
+      "@type": "Offer",
+      availability: "https://schema.org/InStock",
+      priceCurrency: "USD",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: BASE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Nutrition",
+        item: `${BASE_URL}/nutrition`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: menuItem.name,
+        item: `${BASE_URL}/nutrition/${itemId}`,
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       {/* Banner */}
       <Banner imageSrc={menuItem.imagePath} text={menuItem.name} secondaryText={menuItem.description} />
 

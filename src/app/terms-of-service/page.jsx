@@ -1,10 +1,21 @@
 import styles from "./page.module.css";
 
+const BASE_URL = "https://kingdom-movement.vercel.app";
+
 export const metadata = {
   title: "Terms of Service",
   description:
     "Kingdom Movement Terms of Service. Read our terms and conditions that govern your use of our website and services.",
   keywords: ["terms of service", "terms and conditions", "Kingdom Movement terms"],
+  alternates: {
+    canonical: "/terms-of-service",
+  },
+  openGraph: {
+    title: "Terms of Service | Kingdom Movement",
+    description:
+      "Kingdom Movement Terms of Service. Read our terms and conditions that govern your use of our website and services.",
+    url: `${BASE_URL}/terms-of-service`,
+  },
 };
 
 export default function TermsOfService() {
