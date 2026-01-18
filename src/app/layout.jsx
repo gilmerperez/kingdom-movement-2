@@ -80,7 +80,6 @@ export const metadata = {
     images: [`${BASE_URL}/images/home1.jpg`],
   },
   verification: {
-    // Add Google Search Console verification code if available
     google: "3FTfHaZrjPjKogJbOTyhOila5U11Fj2l512M51iBOH0",
   },
 };
